@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Picas y Fijas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: #0f0f1a; color: #fff; font-family: 'Segoe UI', sans-serif; min-height: 100vh; display: flex; flex-direction: column; }
+        .navbar { background-color: #1a1a2e; border-bottom: 2px solid #6c63ff; padding: 1rem 2rem; }
+        .navbar-brand { color: #6c63ff; font-weight: bold; font-size: 1.5rem; text-decoration: none; }
+        .hero { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 4rem 2rem; }
+        .hero h1 { font-size: 3.5rem; font-weight: bold; color: #6c63ff; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; color: #aaa; margin-bottom: 2rem; max-width: 500px; }
+        .btn-jugar { background-color: #6c63ff; color: white; border: none; padding: 1rem 3rem; font-size: 1.1rem; border-radius: 50px; text-decoration: none; transition: all 0.3s; }
+        .btn-jugar:hover { background-color: #5a52d5; color: white; transform: scale(1.05); }
+        .btn-ranking { background-color: transparent; color: #6c63ff; border: 2px solid #6c63ff; padding: 1rem 3rem; font-size: 1.1rem; border-radius: 50px; text-decoration: none; transition: all 0.3s; margin-left: 1rem; }
+        .btn-ranking:hover { background-color: #6c63ff; color: white; }
+        .cards { display: flex; justify-content: center; gap: 2rem; padding: 2rem; flex-wrap: wrap; }
+        .card { background-color: #1a1a2e; border: 1px solid #6c63ff33; border-radius: 15px; padding: 2rem; width: 250px; text-align: center; }
+        .card h3 { color: #6c63ff; margin-bottom: 0.5rem; }
+        .card p { color: #aaa; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <a class="navbar-brand" th:href="@{/}">PICAS Y FIJAS</a>
+    <a th:href="@{/ranking}" style="color:#aaa; text-decoration:none; float:right; margin-top:5px;">Ver Ranking</a>
+</nav>
+
+<div class="hero">
+    <div>
+        <h1>PICAS Y FIJAS</h1>
+        <p>Adivina el numero secreto de 4 cifras. Pon a prueba tu logica e inteligencia.</p>
+        <a th:href="@{/registro}" class="btn-jugar">Jugar Ahora</a>
+        <a th:href="@{/ranking}" class="btn-ranking">Ver Ranking</a>
+    </div>
+</div>
+
+<div class="cards">
+    <div class="card">
+        <h3>Fija</h3>
+        <p>Numero correcto en la posicion correcta</p>
+    </div>
+    <div class="card">
+        <h3>Pica</h3>
+        <p>Numero correcto pero en posicion incorrecta</p>
+    </div>
+    <div class="card">
+        <h3>4 Cifras</h3>
+        <p>Ninguna cifra se repite en el numero secreto</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
